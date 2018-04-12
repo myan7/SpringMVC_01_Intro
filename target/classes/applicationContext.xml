@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- <bean 	id="myCard"
+			class="my.pojos.ATMCard">
+	</bean>
+	
+	<bean 	id="myAccount" 
+			class="my.pojos.SavingAccount">
+			<constructor-arg ref="myCard"></constructor-arg>		
+	</bean> -->
+
+	<!-- <bean 	id="myCard" 
+			class="my.pojos.CreditCard">
+	
+	</bean>
+	
+	<bean 	id="myAccount" 
+			class="my.pojos.CheckingAccount">
+			<property name="creditCard" ref="myCard"></property>	
+	</bean> -->
+	
+	<bean 	id="myCard" 
+			class="my.pojos.CreditCard">
+	</bean>
+	
+	<bean 	id="myAccount" class="my.pojos.CheckingAccount"
+			autowire="byType" 
+			init-method="onInit"
+			destroy-method="onDestory"
+			>
+	</bean>
+</beans>
